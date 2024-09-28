@@ -7,10 +7,9 @@ import Errorpage from './Web/Errorpage/errorpage';
 
 
 function App() {
-  const firstName = 'edward';
   return (<Router>
     <Routes>
-      <Route path='/' element={<Homepage firstName={firstName} />}/>
+      <Route path='/' element={<Homepage />}/>
       <Route path='/dashboard' element={<Dashboard/>}></Route>
       <Route path='*' element={<Errorpage/>}></Route>
     </Routes>

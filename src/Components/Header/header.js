@@ -8,12 +8,12 @@ const Header = () => {
     );
 };
 
-const anotherHeader = () => {
+const HeaderLogFunction = () => {
     return (
         console.log("I'm doing something")
     );
 };
 
-export {anotherHeader};
+export {HeaderLogFunction};
 
 export default Header;
