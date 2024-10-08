@@ -1,13 +1,20 @@
-// import React, { useEffect, useState } from 'react';
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-key */
+import React from 'react';
 import Header from '../../Components/Header/header';
 // import AnotherHeader, { AnotherHeaderOn } from '../../Components/Header/anotherHeader';
 import Footer from '../../Components/Footer/footer';
+import TodoItem from '../../Components/TodoItem';
 
 const Homepage = () => {
+    function handleTodoItemDataUpdate(data){
+        console.log("We  need to update the data such that it equals", data)
+    }
+
     const todoItems = [
-        { id:1, itemName: "get milk", isDone: true },
-        { id:2, itemName: "get bread", isDone: false },
-        { id:3, itemName: "get eggs", isDone: false },
+        { id: 1, itemName: "get milk", isDone: false },
+        { id: 2, itemName: "get bread", isDone: false },
+        { id: 3, itemName: "get eggs", isDone: false },
     ];
 
     // const [name, setName] = useState("Manolo");//getter(name) and setter(setName) the same that java but less verbose 
@@ -46,11 +53,9 @@ const Homepage = () => {
                     </div> */}
             <Header />
             <h3>Todo list</h3>
-            {todoItems.map((todoItem) => {
+            {todoItems.map((data) => {
                 return (
-                    <div key={todoItem.id}>
-                        <label style={ todoItem.isDone===true ? {textDecoration: "line-through"}:{}}> {todoItem.itemName}</label>
-                    </div>
+                    <TodoItem todoItem={data} key={data.id} emitTodoItemDataUpdate={handleTodoItemDataUpdate} />
                 );
             })}
             <Footer />
